@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "akita-counter"
+    }
+  },
+  "defaultProject": "akita-counter",
+  "cli": {
+    "defaultCollection": "@datorama/akita"
+  }
 }

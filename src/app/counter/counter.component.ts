@@ -9,14 +9,22 @@ import { Observable } from 'rxjs';
   styleUrls: ['./counter.component.scss'],
 })
 export class CounterComponent implements OnInit {
-  readonly count$: Observable<number>;
+  readonly counter$: Observable<number>;
 
   constructor(
     private counterService: CounterService,
     private counterQuery: CounterQuery
   ) {
-    this.count$ = this.counterQuery.select('count');
+    this.counter$ = this.counterQuery.select('counter');
   }
 
   ngOnInit() {}
+
+  increment() {
+    this.counterService.increment();
+  }
+
+  decrement() {
+    this.counterService.decrement();
+  }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CounterService } from './state/counter.service';
 import { CounterQuery } from './state/counter.query';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-counter',
@@ -13,7 +14,8 @@ export class CounterComponent implements OnInit {
 
   constructor(
     private counterService: CounterService,
-    private counterQuery: CounterQuery
+    private counterQuery: CounterQuery,
+    private router: Router
   ) {
     this.counter$ = this.counterQuery.select('counter');
   }
@@ -26,5 +28,9 @@ export class CounterComponent implements OnInit {
 
   decrement() {
     this.counterService.decrement();
+  }
+
+  goToTodo() {
+    this.router.navigate(['/todo']);
   }
 }

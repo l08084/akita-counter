@@ -1,10 +1,14 @@
+import { Injectable } from '@angular/core';
+import { guid } from '@datorama/akita';
 import { TodoStore } from './todo.store';
-import { Todo } from './todo.model';
-
+@Injectable({ providedIn: 'root' })
 export class TodoService {
   constructor(private store: TodoStore) {}
 
-  add(todo: Todo) {
-    this.store.add(todo);
+  addTodo(title: string) {
+    this.store.add({
+      id: guid(),
+      title,
+    });
   }
 }

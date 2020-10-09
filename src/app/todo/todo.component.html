@@ -1,5 +1,8 @@
-<form [formGroup]="todoFormGroup">
-  <mat-form-field>
-    <input matInput placeholder="タイトル" formControlName="title">
-  </mat-form-field>
-</form>
+<div class="todo-area">
+  <form [formGroup]="todoFormGroup">
+    <mat-form-field>
+      <input matInput placeholder="TODOタイトル" formControlName="title" />
+    </mat-form-field>
+  </form>
+  <button mat-raised-button color="primary">Add TODO</button>
+</div>

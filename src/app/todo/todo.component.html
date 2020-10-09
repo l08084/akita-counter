@@ -11,5 +11,6 @@
 <ul>
   <li *ngFor="let todo of allTodo$ | async">
     {{ todo.title }}
+    <button (click)="removeTodo(todo.id)" mat-button color="warn">Remove</button>
   </li>
 </ul>

@@ -1,6 +1,6 @@
 import { TodoState } from './state/todo.store';
 import { Component, OnInit } from '@angular/core';
-import { getEntityType } from '@datorama/akita';
+import { getEntityType, ID } from '@datorama/akita';
 import { Observable } from 'rxjs';
 import { TodoService } from './state/todo.service';
 import { TodoQuery } from './state/todo.query';
@@ -32,5 +32,9 @@ export class TodoComponent implements OnInit {
 
   addTodo() {
     this.service.addTodo(this.titleControl.value);
+  }
+
+  removeTodo(id: ID) {
+    this.service.removeTodo(id);
   }
 }

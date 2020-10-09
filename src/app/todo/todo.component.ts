@@ -25,7 +25,12 @@ export class TodoComponent implements OnInit {
     this.todoFormGroup = this.fb.group({
       title: ['', []],
     });
+    this.titleControl = this.todoFormGroup.get('title') as FormControl;
   }
 
   ngOnInit() {}
+
+  addTodo() {
+    this.service.addTodo(this.titleControl.value);
+  }
 }

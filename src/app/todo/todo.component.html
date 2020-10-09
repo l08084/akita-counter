@@ -4,5 +4,12 @@
       <input matInput placeholder="TODOタイトル" formControlName="title" />
     </mat-form-field>
   </form>
-  <button mat-raised-button color="primary">Add TODO</button>
+  <button (click)="addTodo()" mat-raised-button color="primary">
+    Add TODO
+  </button>
 </div>
+<ul>
+  <li *ngFor="let todo of allTodo$ | async">
+    {{ todo.title }}
+  </li>
+</ul>

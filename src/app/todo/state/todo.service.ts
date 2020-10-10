@@ -5,6 +5,12 @@ import { TodoStore } from './todo.store';
 export class TodoService {
   constructor(private store: TodoStore) {}
 
+  /**
+   * TODOを追加する
+   *
+   * @param {string} title
+   * @memberof TodoService
+   */
   addTodo(title: string) {
     this.store.add({
       id: guid(),
@@ -12,6 +18,12 @@ export class TodoService {
     });
   }
 
+  /**
+   * TODOを削除する
+   *
+   * @param {ID} id
+   * @memberof TodoService
+   */
   removeTodo(id: ID) {
     this.store.remove(id);
   }

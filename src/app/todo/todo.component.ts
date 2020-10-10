@@ -30,10 +30,21 @@ export class TodoComponent implements OnInit {
 
   ngOnInit() {}
 
+  /**
+   * TODOを追加する
+   *
+   * @memberof TodoComponent
+   */
   addTodo() {
     this.service.addTodo(this.titleControl.value);
   }
 
+  /**
+   * TODOを削除する
+   *
+   * @param {ID} id
+   * @memberof TodoComponent
+   */
   removeTodo(id: ID) {
     this.service.removeTodo(id);
   }
